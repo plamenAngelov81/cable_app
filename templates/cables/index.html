@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h2>Current Cables</h2>
+    <a class="create_cable_link" href="{% url 'create cable' %}">Create New Cable</a>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Cable Name</td><td>Cap Num</td><td>Clutch num</td><td>Inductor Type</td><td>Machine</td><td>Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cable in cables %}
+                <tr>
+                    <td><a href="{% url 'cable details' pk=cable.pk %}">{{ cable.cable_name }}</a></td>
+                    <td>{{ cable.cap_number }}</td>
+                    <td>{{ cable.clutch_number }}</td>
+                    <td>{{ cable.inductor_type }}</td>
+                    <td>{{ cable.machine }}</td>
+                    <td>{{ cable.created_on }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

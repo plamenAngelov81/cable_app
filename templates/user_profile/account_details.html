@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    {% load static %}
+
+    <h1>Profile Details</h1>
+
+    <div class="details">
+
+        <p>{{ user.get_name }}</p>
+
+        <p>Username: {{ user.username }}</p>
+
+        <p>Email: {{ user.email }}</p>
+    </div>
+
+    <div class="edit-delete">
+
+            <a href="{% url 'account edit' pk=object.pk %}" class="account">
+                Edit
+            </a>
+
+
+            <a href="{% url 'account delete' pk=object.pk %}" class="account">
+                Delete
+            </a>
+
+    </div>
+
+
+{% endblock %}

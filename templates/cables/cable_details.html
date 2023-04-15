@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h2>Cable Details</h2>
+    <p>{{ cable.cable_name }}</p>
+    <p>{{ cable.cap_number }}</p>
+    <p>{{ cable.clutch_number }}</p>
+    <p>{{ cable.inductor_type }}</p>
+    <p>{{ cable.machine }}</p>
+    <p>{{ cable.created_on }}</p>
+    <a href="{% url 'cable edit' pk=cable.pk %}">Edit Cable</a>
+    <a href="{% url 'cable delete' pk=cable.pk %}">Delete Cable</a>
+    <a href="#">Order Cable</a>
+
+{% endblock %}

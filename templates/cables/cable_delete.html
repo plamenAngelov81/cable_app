@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h2>Delete Cable</h2>
+    <form method="post" action="{% url 'cable delete' pk=cable.pk %}">
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        {{ form }}
+        {% csrf_token %}
+        <button>Delete</button> <a href="{% url 'cable details' pk=cable.pk %}">No</a>
+    </form>
+{% endblock %}
