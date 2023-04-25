@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <link rel="stylesheet" href="{% static 'css/orders/order_cable.css' %}">
+    <form class="order_cable_form" method="post" action="{% url 'cable order' pk=cable.pk %}">
+        <h2>Order Cable</h2>
+
+        <div>
+            <label class="order_label" for="id_user">User:</label>
+            <input type="text" name="user" maxlength="50" required id="id_user" value="{{ request.user.get_name }}">
+        </div>
+
+        <div>
+            <label class="order_label" for="id_cable">Cable:</label>
+            <input type="text" name="cable" maxlength="50" required id="id_cable" value="{{ cable.cable_name }}">
+        </div>
+
+        <div>
+            <label class="order_label" for="id_cable_quantity">Quantity:</label>
+            <input type="text" name="cable_quantity" min="0" required id="id_cable_quantity">
+        </div>
+
+        {% csrf_token %}
+        <button class="order_form_btn">Order Cable</button>
+    </form>
+{% endblock %}

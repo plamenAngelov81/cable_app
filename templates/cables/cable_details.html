@@ -1,14 +1,39 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block page_content %}
-    <h2>Cable Details</h2>
-    <p>{{ cable.cable_name }}</p>
-    <p>{{ cable.cap_number }}</p>
-    <p>{{ cable.clutch_number }}</p>
-    <p>{{ cable.inductor_type }}</p>
-    <p>{{ cable.machine }}</p>
-    <p>{{ cable.created_on }}</p>
-    <a href="{% url 'cable edit' pk=cable.pk %}">Edit Cable</a>
-    <a href="{% url 'cable delete' pk=cable.pk %}">Delete Cable</a>
-    <a href="#">Order Cable</a>
-
+    <div class="cable_details">
+        <link rel="stylesheet" href="{% static 'css/cable_index/cable_details.css' %}">
+        <h2>Cable Details</h2>
+        <table>
+            <tr>
+                <td class="cable_details_td">Cable Name: </td>
+                <td class="cable_details_value">{{ cable.cable_name }}</td>
+            </tr>
+            <tr>
+                <td class="cable_details_td">Cap Number: </td>
+                <td class="cable_details_value">{{ cable.cap_number }}</td>
+            </tr>
+            <tr>
+                <td class="cable_details_td">Clutch Number: </td>
+                <td class="cable_details_value">{{ cable.clutch_number }}</td>
+            </tr>
+            <tr>
+                <td class="cable_details_td">Inductor Type: </td>
+                <td class="cable_details_value">{{ cable.inductor_type }}</td>
+            </tr>
+            <tr>
+                <td class="cable_details_td">Machine: </td>
+                <td class="cable_details_value">{{ cable.machine }}</td>
+            </tr>
+            <tr>
+                <td class="cable_details_td">Created On: </td>
+                <td class="cable_details_value">{{ cable.created_on }}</td>
+            </tr>
+        </table>
+        <div>
+            <a class="edit_cable" href="{% url 'cable edit' pk=cable.pk %}">Edit Cable</a>
+            <a class="delete_cable" href="{% url 'cable delete' pk=cable.pk %}">Delete Cable</a>
+        </div>
+        <a class="order_cable" href="{% url 'cable order' pk=object.pk %}">Order Cable</a>
+    </div>
 {% endblock %}

@@ -1,0 +1,101 @@
+
+
+.current_cable_header {
+    font-size: 34px;
+    margin-left: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 50px;
+}
+
+thead {
+    background-color: black;
+
+
+    text-align: center;
+    color: white;
+}
+
+thead tr td {
+    padding: 6px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: lightgray;
+    border-collapse: collapse;
+    border: none;
+}
+
+tbody tr td {
+    padding: 6px;
+    text-align: center;
+}
+
+tbody tr td a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ff1212;
+}
+
+tbody tr td a:hover {
+    color: #6060f3;
+}
+
+.create_cable_link {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 14px 50px;
+}
+
+.create_cable_link:hover {
+    background-color: #88da88;
+}
+
+#create_form {
+    margin: 12px 0;
+}
+
+#create_form div {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+#create_form h3 {
+    margin-left: 80px;
+    margin-bottom: 22px;
+}
+
+#create_form div label {
+    width: 120px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#create_form button {
+    margin-left: 90px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6b93ef;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 12px;
+}
+
+#create_form button:hover {
+    background-color: #057905;
+    cursor: pointer;
+}

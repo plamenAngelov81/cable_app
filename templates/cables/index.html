@@ -1,7 +1,15 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block page_content %}
-    <h2>Current Cables</h2>
-    <a class="create_cable_link" href="{% url 'create cable' %}">Create New Cable</a>
+    <link rel="stylesheet" href="{% static 'css/cable_index/cable_index.css' %}">
+    <h2 class="current_cable_header">Current Cables</h2>
+    <button class="create_cable_link">Create New Cable</button>
+    <form id='create_form' method="post" action="{% url "index" %}" style="display: none">
+        <h3>Create New Cable</h3>
+        {{ form.as_div }}
+        {% csrf_token %}
+        <button type="submit">Create</button>
+    </form>
 
     <table>
         <thead>
@@ -22,4 +30,5 @@
             {% endfor %}
         </tbody>
     </table>
+    <script src="{% static "js_scripts/create_cable.js" %}"></script>
 {% endblock %}

@@ -1,0 +1,27 @@
+
+.order_cable_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.order_label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.order_form_btn {
+    background-color: #6060f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 22px;
+}
+
+.order_form_btn:hover {
+    background-color: #39a92e;
+}

@@ -1,9 +1,12 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block page_content %}
-    <h2>Edit Cable</h2>
-    <form method="post" action="{% url 'cable edit' pk=cable.pk %}">
+    <link rel="stylesheet" href="{% static 'css/cable_index/cable_edit.css' %}">
+    <h2 class="edit_cable_header">Edit Cable</h2>
+    <form class="edit_cable_form" method="post" action="{% url 'cable edit' pk=cable.pk %}">
         {{ form.as_div }}
         {% csrf_token %}
-        <button>Edit</button>
+        <button class="form_edit_btn">Edit Cable</button>
     </form>
+
 {% endblock %}

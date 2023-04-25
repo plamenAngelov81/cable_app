@@ -12,23 +12,25 @@
 <body>
 <header>
     <nav>
-        <p class="header_p">Cable App</p>
+        <a class="header_a" href="{% url 'index' %}">Cable App</a>
         <ul role="list">
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'account details' pk=request.user.pk %}" class="split">{{ user.username }}</a></li>
-                <li><a href="{% url 'account logout' %}" class="split">Log Out</a></li>
+                <li class="last_li"><a href="{% url 'account logout' %}" class="split">Log Out</a></li>
 
             {% else %}
                 <li><a href="{% url 'account login' %}" class="split">Log In</a></li>
-                <li><a href="{% url 'account register' %}" class="split">Register</a></li>
+                <li class="last_li"><a href="{% url 'account register' %}" class="split">Register</a></li>
 
             {% endif %}
         </ul>
     </nav>
 </header>
-    <div class="content">
+<main>
+    <section>
         {% block page_content %}
         {% endblock %}
-    </div>
+    </section>
+</main>
 </body>
 </html>

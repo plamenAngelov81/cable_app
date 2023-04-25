@@ -15,18 +15,49 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
+
 }
 
 ul li {
-    margin-right: 150px;
-    font-weight: 500;
     font-size: 18px;
 }
 
-.header_p {
+ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.last_li {
+    margin-right: 150px;
+}
+
+.header_a {
     margin-right: auto;
     margin-left: 10%;
     font-size: 26px;
     padding: 10px 10px;
     font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+.header_a:hover {
+    text-decoration: underline;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section {
+    margin-top: 20px;
 }

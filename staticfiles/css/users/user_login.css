@@ -1,0 +1,26 @@
+
+.user_login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.user_login_form div label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.user_login_btn {
+    background-color: #263552;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 30px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.user_login_btn:hover {
+    background-color: #1f5d19;
+}

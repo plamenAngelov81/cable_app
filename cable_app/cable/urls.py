@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from cable_app.cable.views import index, CableCreate, CableDetailsView, CableEditView, CableDeleteView
+from cable_app.cable.views import index, CableCreate, CableDetailsView, CableEditView, CableDeleteView, order_cable
 
 urlpatterns = [
     path('', index, name='index'),
@@ -9,5 +9,6 @@ urlpatterns = [
         path('details/<int:pk>/', CableDetailsView.as_view(), name='cable details'),
         path('edit/<int:pk>/', CableEditView.as_view(), name='cable edit'),
         path('delete/<int:pk>/', CableDeleteView.as_view(), name='cable delete'),
+        path('<int:pk>/order/', order_cable, name='cable order'),
     ]))
 ]

@@ -1,0 +1,44 @@
+
+.user_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.user_details_header {
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.label_td {
+    text-align: right;
+}
+
+.span {
+    font-weight: bold;
+}
+
+.account_edit {
+    background-color: #1f5d19;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin-right: 6px;
+}
+
+.account_delete {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+
+}
