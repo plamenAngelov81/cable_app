@@ -2,8 +2,9 @@
 {% load static %}
 {% block page_content %}
     <link rel="stylesheet" href="{% static 'css/cable_index/cable_delete.css' %}">
-    <h2>Delete Cable</h2>
+
     <form method="post" action="{% url 'cable delete' pk=cable.pk %}">
+        <h2>Delete Cable</h2>
         <p class="form_p">Are you sure you want to delete <span class="form_span">{{ object }}</span>?</p>
         {{ form }}
         {% csrf_token %}

@@ -18,4 +18,4 @@ class CableEditForm(forms.ModelForm):
 class OrderCable(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['user', 'cable', 'cable_quantity']
+        fields = ['user', 'cable', 'company_name', 'cable_quantity']

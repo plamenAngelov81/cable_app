@@ -54,10 +54,8 @@ ul li a:hover {
 
 main {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    gap: 14px;
 }
 
-main section {
-    margin-top: 20px;
-}

@@ -72,6 +72,8 @@ class Cable(models.Model):
 
 
 class Order(models.Model):
+    COMPANY_MAX_LEN = 100
+
     user = models.CharField(
         max_length=50,
         null=False,
@@ -83,4 +85,11 @@ class Order(models.Model):
         blank=False,
     )
     cable_quantity = models.PositiveIntegerField()
+
+    company_name = models.CharField(
+        max_length=COMPANY_MAX_LEN,
+        null=False,
+        blank=False,
+    )
+
     date_created = models.DateTimeField(auto_now_add=True)

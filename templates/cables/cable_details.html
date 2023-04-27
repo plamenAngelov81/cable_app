@@ -30,10 +30,18 @@
                 <td class="cable_details_value">{{ cable.created_on }}</td>
             </tr>
         </table>
-        <div>
-            <a class="edit_cable" href="{% url 'cable edit' pk=cable.pk %}">Edit Cable</a>
-            <a class="delete_cable" href="{% url 'cable delete' pk=cable.pk %}">Delete Cable</a>
-        </div>
-        <a class="order_cable" href="{% url 'cable order' pk=object.pk %}">Order Cable</a>
+        {% if request.user.is_staff or request.user.is_superuser %}
+            <div>
+                <a class="edit_cable" href="{% url 'cable edit' pk=cable.pk %}">Edit Cable</a>
+                <a class="delete_cable" href="{% url 'cable delete' pk=cable.pk %}">Delete Cable</a>
+            </div>
+        {% endif %}
+        {% if request.user.is_superuser  %}
+            <a class="order_cable" href="{% url 'cable order' pk=object.pk %}">Order Cable</a>
+        {% elif request.user.is_staff %}
+            <a class="order_cable" href="{% url 'cable order' pk=object.pk %}" style="display: none">Order Cable</a>
+        {% else %}
+            <a class="order_cable" href="{% url 'cable order' pk=object.pk %}">Order Cable</a>
+        {% endif %}
     </div>
 {% endblock %}

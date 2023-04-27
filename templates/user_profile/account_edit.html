@@ -2,8 +2,8 @@
 {% load static %}
 {% block page_content %}
     <link rel="stylesheet" href="{% static 'css/users/user_edit.css' %}">
-    <h1 class="edit_user_header">Edit Profile</h1>
     <form class="edit_user_form" method="post" action="{% url 'account edit' pk=object.pk %}">
+        <h1 class="edit_user_header">Edit Profile</h1>
         {{ form.as_div }}
         {% csrf_token %}
         <button>Edit Profile</button>

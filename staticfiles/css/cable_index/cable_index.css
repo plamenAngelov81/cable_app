@@ -2,12 +2,17 @@
 
 .current_cable_header {
     font-size: 34px;
-    margin-left: 50px;
+}
+
+.header_btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
 }
 
 table {
     border-collapse: collapse;
-    margin-left: 50px;
 }
 
 thead {
@@ -52,7 +57,6 @@ tbody tr td a:hover {
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 14px 50px;
 }
 
 .create_cable_link:hover {
@@ -64,7 +68,7 @@ tbody tr td a:hover {
 }
 
 #create_form div {
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -98,4 +102,8 @@ tbody tr td a:hover {
 #create_form button:hover {
     background-color: #057905;
     cursor: pointer;
+}
+
+.order_header {
+
 }

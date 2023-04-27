@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
@@ -5,11 +6,12 @@ from django.views import generic
 from cable_app.cable import forms
 from cable_app.cable.forms import CableCreateForm, OrderCable
 from cable_app.cable.models import Cable, Order
-from cable_app.users.models import UserProfile
 
 
+@login_required(login_url='account login')
 def index(request):
     cables = Cable.objects.all()
+    orders = Order.objects.all()
     if request.method == "GET":
         form = forms.CableCreateForm()
     else:
@@ -18,11 +20,14 @@ def index(request):
             form.save()
     context = {
         'cables': cables,
-        'form': form
+        'form': form,
+        'orders': orders
     }
     return render(request, 'cables/index.html', context)
 
 
+# @login_required
+# @permission_required('cable.add_cable')
 class CableCreate(generic.CreateView):
     model = Cable
     template_name = 'cables/cable_create.html'
