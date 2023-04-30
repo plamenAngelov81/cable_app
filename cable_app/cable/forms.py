@@ -19,3 +19,9 @@ class OrderCable(forms.ModelForm):
     class Meta:
         model = Order
         fields = ['user', 'cable', 'company_name', 'cable_quantity']
+
+
+class EditOrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['confirm_user', 'is_confirmed']

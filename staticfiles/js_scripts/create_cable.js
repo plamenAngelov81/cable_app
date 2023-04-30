@@ -10,6 +10,10 @@ function create_cable() {
     const clutchNumberElement = document.getElementById('id_clutch_number')
     const inductorTypeElement = document.getElementById('id_inductor_type')
     const machineElement = document.getElementById('id_machine')
+    const viewMoreElement = Array.from(document.getElementsByClassName('view-more'))[0]
+    const cableMachineElement = document.getElementById('cable_machine')
+
+    viewMoreElement.addEventListener('click', get_info)
 
     function show_cable_create_form() {
         create_form_element.style.display = 'block'
@@ -26,4 +30,12 @@ function create_cable() {
         create_form_element.style.display = 'none'
         new_cable_create_btn.style.display = 'block'
     }
+
+    // function get_info() {
+    //     let div_element = document.createElement('div')
+    //     div_element.textContent = cableMachineElement.textContent
+    //     cableMachineElement.appendChild(div_element)
+    //     console.log(cableMachineElement.textContent)
+    // }
+
 }

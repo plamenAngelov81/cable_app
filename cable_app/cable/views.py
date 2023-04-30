@@ -1,10 +1,10 @@
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
 from cable_app.cable import forms
-from cable_app.cable.forms import CableCreateForm, OrderCable
+from cable_app.cable.forms import CableCreateForm, OrderCable, EditOrderForm
 from cable_app.cable.models import Cable, Order
 
 
@@ -26,8 +26,6 @@ def index(request):
     return render(request, 'cables/index.html', context)
 
 
-# @login_required
-# @permission_required('cable.add_cable')
 class CableCreate(generic.CreateView):
     model = Cable
     template_name = 'cables/cable_create.html'
@@ -67,3 +65,10 @@ def order_cable(request, pk):
         'cable': cable
     }
     return render(request, 'orders/order_cable.html', context)
+
+
+class EditOrderView(generic.UpdateView):
+    template_name = 'orders/order_edit.html'
+    model = Order
+    form_class = EditOrderForm
+    success_url = reverse_lazy('index')

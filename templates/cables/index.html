@@ -34,8 +34,8 @@
                     <td><a href="{% url 'cable details' pk=cable.pk %}">{{ cable.cable_name }}</a></td>
                     <td>{{ cable.cap_number }}</td>
                     <td>{{ cable.clutch_number }}</td>
-                    <td>{{ cable.inductor_type }}</td>
-                    <td>{{ cable.machine }}</td>
+                    <td>{{ cable.inductor_type|truncatechars:10 }}</td>
+                    <td id="cable_machine">{{ cable.machine|truncatechars:10 }}</td>
                     <td>{{ cable.created_on }}</td>
                 </tr>
             {% endfor %}
@@ -54,6 +54,8 @@
                 <td>User Name</td>
                 <td>Created On</td>
                 <td>Order BTN</td>
+                <td>Confirmed On</td>
+                <td>Issued</td>
             </tr>
             </thead>
             <tbody>
@@ -64,7 +66,23 @@
                     <td>{{ order.company_name }}</td>
                     <td>{{ order.user }}</td>
                     <td>{{ order.date_created }}</td>
-                    <td><a href="#">Ordered</a></td>
+                    {% if request.user.is_superuser and not order.is_confirmed %}
+                        <td><a href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
+                    {% elif order.is_confirmed %}
+                        <td>Confirmed</td>
+                    {% else %}
+                        <td>Not Confirmed</td>
+                    {% endif %}
+                    {% if order.is_confirmed %}
+                        <td>{{ order.updated_on }}</td>
+                    {% else %}
+                        <td>-</td>
+                    {% endif %}
+                    {% if order.is_confirmed %}
+                        <td>{{ order.confirm_user }}</td>
+                    {% else %}
+                        <td>-</td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>

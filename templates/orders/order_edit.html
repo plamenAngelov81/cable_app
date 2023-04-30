@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <form method="post" action="#">
+        <h2>Confirm Order</h2>
+        <div>
+            <label for="id_confirm_user">Confirm User:</label>
+            <input type="text" name="confirm_user" maxlength="35" id="id_confirm_user" value="{{ request.user.get_name }}">
+        </div>
+
+        <div>
+            <label for="id_is_confirmed">Is confirmed:</label>
+            <select name="is_confirmed" id="id_is_confirmed">
+                <option value="true">Yes</option>
+                <option value="False" selected>No</option>
+            </select>
+        </div>
+        {% csrf_token %}
+        <button>Edit Order</button>
+    </form>
+{% endblock %}

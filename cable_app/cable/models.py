@@ -84,7 +84,12 @@ class Order(models.Model):
         null=False,
         blank=False,
     )
-    cable_quantity = models.PositiveIntegerField()
+
+    cable_quantity = models.PositiveIntegerField(
+        verbose_name='Quantity',
+        null=False,
+        blank=False,
+    )
 
     company_name = models.CharField(
         max_length=COMPANY_MAX_LEN,
@@ -92,4 +97,22 @@ class Order(models.Model):
         blank=False,
     )
 
-    date_created = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    updated_on = models.DateTimeField(
+        auto_now=True,
+    )
+
+    is_confirmed = models.BooleanField(
+        null=True,
+        blank=True,
+        default=False,
+    )
+
+    confirm_user = models.CharField(
+        max_length=35,
+        null=True,
+        blank=True
+    )
