@@ -67,11 +67,13 @@
                     <td>{{ order.user }}</td>
                     <td>{{ order.date_created }}</td>
                     {% if request.user.is_superuser and not order.is_confirmed %}
-                        <td><a href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
+                        <td class="confirm_order_td"><a class="confirm_order" href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
+                    {% elif request.user.is_staff and not order.is_confirmed %}
+                        <td class="confirm_order_td"><a class="confirm_order" href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
                     {% elif order.is_confirmed %}
-                        <td>Confirmed</td>
+                        <td class="is_confirmed">Confirmed</td>
                     {% else %}
-                        <td>Not Confirmed</td>
+                        <td class="not_confirmed_td">Not Confirmed</td>
                     {% endif %}
                     {% if order.is_confirmed %}
                         <td>{{ order.updated_on }}</td>

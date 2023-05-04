@@ -3,8 +3,40 @@
 {% block page_content %}
     <div class="cable_details">
         <link rel="stylesheet" href="{% static 'css/cable_index/cable_details.css' %}">
-        <h2>Cable Details</h2>
-        <table>
+        <h2 class="cable_details_header">Cable Details</h2>
+
+{#        <div class="field_container">#}
+{#            <div>Cable Name:</div>#}
+{#            <div class="cable_details_value">{{ cable.cable_name }}</div>#}
+{#        </div>#}
+{##}
+{#        <div class="field_container">#}
+{#            <div>Cap Number:</div>#}
+{#            <div class="cable_details_value">{{ cable.cap_number }}</div>#}
+{#        </div>#}
+{##}
+{#        <div class="field_container">#}
+{#            <div>Clutch Number:</div>#}
+{#            <div class="cable_details_value">{{ cable.clutch_number }}</div>#}
+{#        </div>#}
+{##}
+{#        <div class="field_container">#}
+{#            <div>Inductor Type:</div>#}
+{#            <div class="cable_details_value">{{ cable.inductor_type }}</div>#}
+{#        </div>#}
+{##}
+{#        <div class="field_container">#}
+{#            <div>Machine:</div>#}
+{#            <div class="cable_details_value">{{ cable.machine }}</div>#}
+{#        </div>#}
+{##}
+{#        <div class="field_container">#}
+{#            <div>Created On:</div>#}
+{#            <div class="cable_details_value">{{ cable.created_on }}</div>#}
+{#        </div>#}
+
+
+        <table class="table_details">
             <tr>
                 <td class="cable_details_td">Cable Name: </td>
                 <td class="cable_details_value">{{ cable.cable_name }}</td>

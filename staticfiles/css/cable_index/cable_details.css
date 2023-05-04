@@ -4,16 +4,21 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 60%;
+}
+
+.table_details {
+    width: 40%;
 }
 
 .cable_details_td {
     text-align: right;
-
+    vertical-align: top;
 }
 
 .cable_details_value {
     font-weight: bold;
-
+    width: 50%;
 }
 
 .edit_cable {

@@ -44,7 +44,7 @@ class Cable(models.Model):
         validators=[MinLengthValidator(CLUTCH_MIN_LEN)],
     )
 
-    inductor_type = models.CharField(
+    inductor_type = models.TextField(
         verbose_name='Inductor Type',
         null=False,
         blank=False,
@@ -52,7 +52,7 @@ class Cable(models.Model):
         validators=[MinLengthValidator(INDUCTOR_MIN_LEN)],
     )
 
-    machine = models.CharField(
+    machine = models.TextField(
         verbose_name='Machine',
         null=False,
         blank=False,
@@ -116,3 +116,6 @@ class Order(models.Model):
         null=True,
         blank=True
     )
+
+    class Meta:
+        ordering = ['pk']

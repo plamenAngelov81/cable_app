@@ -85,6 +85,7 @@ tbody tr td a:hover {
     width: 120px;
     font-weight: bold;
     text-align: right;
+    align-self: flex-start;
 }
 
 #create_form button {
@@ -104,6 +105,32 @@ tbody tr td a:hover {
     cursor: pointer;
 }
 
-.order_header {
+.is_confirmed {
+    color: white;
+    font-size: 14px;
+    background-color: #109104;
+}
+
+.confirm_order {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+}
+
+.confirm_order_td {
+    background-color: red;
+}
+
+.confirm_order:hover {
+    color: white;
+}
+
+.not_confirmed_td {
+    color: white;
+    background-color: #263552;
+    font-size: 14px;
+}
+
+.id_inductor_type, .id_machine {
 
 }
