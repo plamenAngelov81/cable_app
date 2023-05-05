@@ -42,14 +42,14 @@
             </tbody>
         </table>
     </div>
-        <div>
-            <h2 class="current_cable_header order_header">Orders</h2>
+    <div>
+        <h2 class="current_cable_header order_header">Orders</h2>
 
         <table>
             <thead>
             <tr>
                 <td>Cable Name</td>
-                <td>Cable quantity</td>
+                <td>Quantity</td>
                 <td>Company</td>
                 <td>User Name</td>
                 <td>Created On</td>
@@ -67,9 +67,11 @@
                     <td>{{ order.user }}</td>
                     <td>{{ order.date_created }}</td>
                     {% if request.user.is_superuser and not order.is_confirmed %}
-                        <td class="confirm_order_td"><a class="confirm_order" href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
+                        <td class="confirm_order_td"><a class="confirm_order"
+                                                        href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
                     {% elif request.user.is_staff and not order.is_confirmed %}
-                        <td class="confirm_order_td"><a class="confirm_order" href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
+                        <td class="confirm_order_td"><a class="confirm_order"
+                                                        href="{% url 'confirm order' pk=order.pk %}">Confirm</a></td>
                     {% elif order.is_confirmed %}
                         <td class="is_confirmed">Confirmed</td>
                     {% else %}
@@ -89,6 +91,6 @@
             {% endfor %}
             </tbody>
         </table>
-        {% comment %}{% endcomment %}</div>
+    </div>
     <script src="{% static "js_scripts/create_cable.js" %}"></script>
 {% endblock %}

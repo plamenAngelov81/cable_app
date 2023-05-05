@@ -13,7 +13,7 @@ function create_cable() {
     const viewMoreElement = Array.from(document.getElementsByClassName('view-more'))[0]
     const cableMachineElement = document.getElementById('cable_machine')
 
-    viewMoreElement.addEventListener('click', get_info)
+    // viewMoreElement.addEventListener('click', get_info)
 
     function show_cable_create_form() {
         create_form_element.style.display = 'block'
