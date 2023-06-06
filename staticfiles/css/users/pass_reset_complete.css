@@ -1,0 +1,24 @@
+.pass_reset_complete {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e1e0e0;
+    box-shadow: 11px 12px 22px 0 rgba(91, 90, 90, 0.8);
+}
+
+.pass_reset_complete h1 {
+    margin-bottom: 16px;
+}
+
+.pass_reset_complete a {
+    font-weight: 500;
+    text-decoration: none;
+    padding: 6px 16px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+}
+
+.pass_reset_complete a:hover {
+    background-color: #2da8cd;
+}

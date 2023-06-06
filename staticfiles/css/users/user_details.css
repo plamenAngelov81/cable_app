@@ -1,51 +1,6 @@
-
-/*.user_details {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    gap: 20px;*/
-/*}*/
-
-/*.user_details_header {*/
-/*    text-align: center;*/
-/*}*/
-
-/*.details {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    gap: 10px;*/
-/*}*/
-
-/*.label_td {*/
-/*    text-align: right;*/
-/*}*/
-
-/*.span {*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*.account_edit {*/
-/*    background-color: #1f5d19;*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*    padding: 8px 20px;*/
-/*    border-radius: 5px;*/
-/*    margin-right: 6px;*/
-/*}*/
-
-/*.account_delete {*/
-/*    background-color: red;*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*    padding: 8px 20px;*/
-/*    border-radius: 5px;*/
-/*}*/
-
 .details-acc {
     margin-top: 50px;
     padding: 20px 30px 30px 30px;
-    /*border: 1px solid #2da8cd;*/
     border-radius: 6px;
     box-shadow: 11px 12px 22px 0 rgba(91, 90, 90, 0.8);
     background-color: #e1e0e0;

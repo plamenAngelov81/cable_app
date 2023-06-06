@@ -1,0 +1,46 @@
+.password-reset-form {
+    margin-top: 50px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 8px;
+    background-color: #dedede;
+    box-shadow: 11px 12px 22px 0 rgba(91, 90, 90, 0.8);
+}
+
+.password-reset-form p {
+    font-size: 14px;
+}
+
+.password-reset-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 250px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.password-reset-form button {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+}
+
+.password-reset-form button:hover {
+    background-color: #2da8cd;
+}
