@@ -65,10 +65,10 @@ tbody tr td a:hover {
 
 #create_form {
     margin: 12px 0;
+
 }
 
 #create_form div {
-    /*margin-left: 50px;*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -92,16 +92,16 @@ tbody tr td a:hover {
     margin-left: 90px;
     border-radius: 10px;
     border: none;
-    background-color: #6b93ef;
+    background-color: #44913c;
     color: white;
     font-size: 14px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 70px;
     margin-bottom: 12px;
 }
 
 #create_form button:hover {
-    background-color: #057905;
+    background-color: #60d060;
     cursor: pointer;
 }
 

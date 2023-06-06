@@ -8,10 +8,10 @@ class Cable(models.Model):
     CABLE_MAX_LEN = 25
     CABLE_MIN_LEN = 3
 
-    INDUCTOR_MAX_LEN = 200
+    INDUCTOR_MAX_LEN = 300
     INDUCTOR_MIN_LEN = 3
 
-    MACHINE_MAX_LEN = 100
+    MACHINE_MAX_LEN = 300
     MACHINE_MIN_LEN = 3
 
     CLUTCH_MAX_LEN = 12

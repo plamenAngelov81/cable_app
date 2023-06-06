@@ -14,3 +14,4 @@ urlpatterns = [
     ])),
     path('confirm-order/<int:pk>', EditOrderView.as_view(), name='confirm order')
 ]
+    

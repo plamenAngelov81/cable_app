@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/nav/nav.css' %}">
+    <link rel="wesite icon" id="logo" type="jpg" href="{% static 'images/cable_logo.jpg' %}">
     <title>Cable App</title>
 </head>
 <body>
@@ -17,11 +18,9 @@
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'account details' pk=request.user.pk %}" class="split">{{ user.username }}</a></li>
                 <li class="last_li"><a href="{% url 'account logout' %}" class="split">Log Out</a></li>
-
             {% else %}
-                <li><a href="{% url 'account login' %}" class="split">Log In</a></li>
+                <li><a href="{% url 'account login' %}" class="split">Sign In</a></li>
                 <li class="last_li"><a href="{% url 'account register' %}" class="split">Register</a></li>
-
             {% endif %}
         </ul>
     </nav>

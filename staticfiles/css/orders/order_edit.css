@@ -1,0 +1,30 @@
+.order-edit {
+    margin: 50px 20px;
+    padding: 20px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 11px 12px 22px 0 rgba(91, 90, 90, 0.8);
+    background-color: #d0d0d0;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    padding: 4px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5788ec;
+}
+

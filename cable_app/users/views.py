@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model, login
-from django.contrib.auth.views import LoginView, LogoutView
-from django.shortcuts import render
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm, SetPasswordForm
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView, \
+    PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -39,6 +41,7 @@ class AccountEditView(generic.UpdateView):
     fields = ['username',
               'first_name',
               'last_name',
+              'email'
               ]
 
     def get_success_url(self):
@@ -49,3 +52,33 @@ class AccountDeleteView(generic.DeleteView):
     template_name = 'user_profile/account_delete.html'
     model = UserModel
     success_url = reverse_lazy('index')
+
+
+class ChangeAccPasswordView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy("password_change_done")
+    template_name = "user_passwords/change_password.html"
+
+
+class PassChanged(PasswordChangeDoneView):
+    template_name = "user_passwords/change_pass_successful.html"
+
+
+class PasswordReset(PasswordResetView):
+    form_class = PasswordResetForm
+    template_name = "user_passwords/password_reset.html"
+    success_url = reverse_lazy("password_reset_done")
+
+
+class PasswordResetDone(PasswordResetDoneView):
+    template_name = "user_passwords/password_reset_done.html"
+
+
+class PasswordResetConfirm(PasswordResetConfirmView):
+    form_class = SetPasswordForm
+    success_url = reverse_lazy("password_reset_complete")
+    template_name = "user_passwords/password_reset_confirm.html"
+
+
+class PasswordResetComplete(PasswordResetCompleteView):
+    template_name = "user_passwords/password_reset_complete.html"

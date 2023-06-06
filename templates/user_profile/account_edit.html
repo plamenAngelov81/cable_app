@@ -1,12 +1,26 @@
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% block page_content %}#}
+{#    <link rel="stylesheet" href="{% static 'css/users/user_edit.css' %}">#}
+{#    <form class="edit_user_form" method="post" action="{% url 'account edit' pk=object.pk %}">#}
+{#        <h1 class="edit_user_header">Edit Profile</h1>#}
+{#        {{ form.as_div }}#}
+{#        {% csrf_token %}#}
+{#        <button>Edit Profile</button>#}
+{#    </form>#}
+{#{% endblock %}#}
+
 {% extends 'base/base.html' %}
-{% load static %}
 {% block page_content %}
+{% load static %}
     <link rel="stylesheet" href="{% static 'css/users/user_edit.css' %}">
-    <form class="edit_user_form" method="post" action="{% url 'account edit' pk=object.pk %}">
-        <h1 class="edit_user_header">Edit Profile</h1>
-        {{ form.as_div }}
-        {% csrf_token %}
-        <button>Edit Profile</button>
-    </form>
+    <section class="edit-acc">
+        <h1>Edit Profile</h1>
+        <form method="post" action="{% url 'account edit' pk=object.pk %}">
+            {{ form.as_div }}
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+    </section>
 {% endblock %}
 

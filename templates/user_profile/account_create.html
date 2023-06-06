@@ -1,11 +1,25 @@
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% block page_content %}#}
+{#    <link rel="stylesheet" href="{% static 'css/users/register_user.css' %}">#}
+{#    <form class="create_user_form" method="post" action="{% url 'account register' %}">#}
+{#        <h1>Create Profile</h1>#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_div }}#}
+{#        <button class="create_user_btn">Create</button>#}
+{#    </form>#}
+{#{% endblock %}#}
+
 {% extends 'base/base.html' %}
-{% load static %}
 {% block page_content %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/users/register_user.css' %}">
-    <form class="create_user_form" method="post" action="{% url 'account register' %}">
+    <section class="create-acc">
         <h1>Create Profile</h1>
-        {% csrf_token %}
-        {{ form.as_div }}
-        <button class="create_user_btn">Create</button>
-    </form>
+        <form method="post" action="{% url 'account register' %}">
+            {{ form.as_div }}
+            {% csrf_token %}
+            <button>Create</button>
+        </form>
+    </section>
 {% endblock %}

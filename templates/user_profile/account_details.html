@@ -1,19 +1,46 @@
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% block page_content %}#}
+{#    <link rel="stylesheet" href="{% static 'css/users/user_details.css' %}">#}
+{#    <div class="user_details">#}
+{#        <h1 class="user_details_header">Profile Details</h1>#}
+{#        <table class="details">#}
+{#            <tr><td class="label_td"><span class="span">Full Name</span>:</td><td> {{ user.get_name }}</td></tr>#}
+{#            <tr><td class="label_td"><span class="span">Username</span>:</td><td> {{ user.username }}</td></tr>#}
+{#            <tr><td class="label_td"><span class="span">Email</span>:</td><td> {{ user.email }}</td></tr>#}
+{#        </table>#}
+{#        <div class="edit-delete">#}
+{#            <a href="{% url 'account edit' pk=object.pk %}" class="account_edit">Edit</a>#}
+{##}
+{#            <a href="{% url 'account delete' pk=object.pk %}" class="account_delete">Delete</a>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#{% endblock %}#}
+
 {% extends 'base/base.html' %}
-{% load static %}
 {% block page_content %}
+{% load static %}
     <link rel="stylesheet" href="{% static 'css/users/user_details.css' %}">
-    <div class="user_details">
-        <h1 class="user_details_header">Profile Details</h1>
-        <table class="details">
-            <tr><td class="label_td"><span class="span">Full Name</span>:</td><td> {{ user.get_name }}</td></tr>
-            <tr><td class="label_td"><span class="span">Username</span>:</td><td> {{ user.username }}</td></tr>
-            <tr><td class="label_td"><span class="span">Email</span>:</td><td> {{ user.email }}</td></tr>
-        </table>
-        <div class="edit-delete">
-            <a href="{% url 'account edit' pk=object.pk %}" class="account_edit">Edit</a>
-
-            <a href="{% url 'account delete' pk=object.pk %}" class="account_delete">Delete</a>
+    <section class="details-acc">
+        <h1>Profile Details</h1>
+        <div class="details-container">
+            <div class="current-details">
+                <p class="label-p">Name:</p>
+                <p class="information-acc">{{ object.get_name }}</p>
+            </div>
+            <div class="current-details">
+                <p class="label-p">Username:</p>
+                <p class="information-acc">{{ object.username }}</p>
+            </div>
+            <div class="current-details">
+                <p class="label-p">Email:</p>
+                <p class="information-acc">{{ object.email }}</p>
+            </div>
         </div>
-    </div>
-
+        <div class="actions">
+            <a class="edit-acc" href="{% url 'account edit' pk=object.pk %}">Edit Profile</a>
+            <a class="change-pass" href="{% url 'change password' pk=object.pk %}">Change Pass</a>
+        </div>
+    </section>
 {% endblock %}

@@ -10,8 +10,8 @@ from cable_app.cable.models import Cable, Order
 
 @login_required(login_url='account login')
 def index(request):
-    cables = Cable.objects.all()
-    orders = Order.objects.all()
+    cables = Cable.objects.all().reverse()
+    orders = Order.objects.all().reverse()
     if request.method == "GET":
         form = forms.CableCreateForm()
     else:
@@ -42,7 +42,9 @@ class CableEditView(generic.UpdateView):
     model = Cable
     template_name = 'cables/cable_edit.html'
     form_class = CableCreateForm
-    success_url = reverse_lazy('index')
+
+    def get_success_url(self):
+        return reverse_lazy('cable details', kwargs={'pk': self.object.pk})
 
 
 class CableDeleteView(generic.DeleteView):
@@ -72,3 +74,4 @@ class EditOrderView(generic.UpdateView):
     model = Order
     form_class = EditOrderForm
     success_url = reverse_lazy('index')
+

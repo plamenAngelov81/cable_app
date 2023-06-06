@@ -62,3 +62,4 @@ class EditOrderForm(forms.ModelForm):
         fields = ['confirm_user',
                   'is_confirmed'
                   ]
+

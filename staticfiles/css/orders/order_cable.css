@@ -3,19 +3,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50px 20px;
+    padding: 20px 30px 26px 0;
     gap: 20px;
+    border-radius: 10px;
+    box-shadow: 11px 12px 22px 0 rgba(91, 90, 90, 0.8);
+    background-color: #d3d3d3;
 }
 
 .order_label {
     display: inline-block;
-    width: 110px;
+    width: 100px;
     text-align: right;
     font-weight: bold;
     margin-right: 8px;
 }
 
 .order_form_btn {
-    background-color: #6060f3;
+    background-color: #020202;
     color: white;
     border: none;
     border-radius: 6px;
@@ -24,5 +29,5 @@
 }
 
 .order_form_btn:hover {
-    background-color: #39a92e;
+    background-color: #2da8cd;
 }
